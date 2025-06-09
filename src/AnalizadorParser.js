@@ -1,30 +1,31 @@
-// Generated from grammar/Analizador.g4 by ANTLR 4.13.2
+// Generated from grammar//Analizador.g4 by ANTLR 4.13.1
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import AnalizadorListener from './AnalizadorListener.js';
-const serializedATN = [4,1,18,86,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,
+const serializedATN = [4,1,18,89,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,
 2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,1,0,4,0,22,8,0,11,0,12,0,23,1,0,
 1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,37,8,1,1,2,1,2,1,2,1,2,1,2,1,
 2,1,2,1,2,3,2,47,8,2,1,2,1,2,1,2,1,2,1,3,5,3,54,8,3,10,3,12,3,57,9,3,1,4,
 1,4,1,4,1,4,1,5,1,5,1,5,1,6,1,6,1,6,5,6,69,8,6,10,6,12,6,72,9,6,1,7,1,7,
-1,7,1,7,1,7,1,7,3,7,80,8,7,1,8,1,8,1,9,1,9,1,9,0,0,10,0,2,4,6,8,10,12,14,
-16,18,0,1,1,0,10,13,83,0,21,1,0,0,0,2,36,1,0,0,0,4,38,1,0,0,0,6,55,1,0,0,
-0,8,58,1,0,0,0,10,62,1,0,0,0,12,65,1,0,0,0,14,79,1,0,0,0,16,81,1,0,0,0,18,
-83,1,0,0,0,20,22,3,2,1,0,21,20,1,0,0,0,22,23,1,0,0,0,23,21,1,0,0,0,23,24,
-1,0,0,0,24,25,1,0,0,0,25,26,5,0,0,1,26,1,1,0,0,0,27,28,3,4,2,0,28,29,5,1,
-0,0,29,37,1,0,0,0,30,31,3,8,4,0,31,32,5,1,0,0,32,37,1,0,0,0,33,34,3,10,5,
-0,34,35,5,1,0,0,35,37,1,0,0,0,36,27,1,0,0,0,36,30,1,0,0,0,36,33,1,0,0,0,
-37,3,1,0,0,0,38,39,5,2,0,0,39,40,3,16,8,0,40,41,5,3,0,0,41,42,3,12,6,0,42,
-43,5,4,0,0,43,46,3,12,6,0,44,45,5,5,0,0,45,47,3,12,6,0,46,44,1,0,0,0,46,
-47,1,0,0,0,47,48,1,0,0,0,48,49,5,6,0,0,49,50,3,6,3,0,50,51,5,7,0,0,51,5,
-1,0,0,0,52,54,3,2,1,0,53,52,1,0,0,0,54,57,1,0,0,0,55,53,1,0,0,0,55,56,1,
-0,0,0,56,7,1,0,0,0,57,55,1,0,0,0,58,59,3,16,8,0,59,60,5,8,0,0,60,61,3,12,
-6,0,61,9,1,0,0,0,62,63,5,9,0,0,63,64,3,12,6,0,64,11,1,0,0,0,65,70,3,14,7,
-0,66,67,7,0,0,0,67,69,3,14,7,0,68,66,1,0,0,0,69,72,1,0,0,0,70,68,1,0,0,0,
-70,71,1,0,0,0,71,13,1,0,0,0,72,70,1,0,0,0,73,80,3,18,9,0,74,80,3,16,8,0,
-75,76,5,14,0,0,76,77,3,12,6,0,77,78,5,15,0,0,78,80,1,0,0,0,79,73,1,0,0,0,
-79,74,1,0,0,0,79,75,1,0,0,0,80,15,1,0,0,0,81,82,5,16,0,0,82,17,1,0,0,0,83,
-84,5,17,0,0,84,19,1,0,0,0,6,23,36,46,55,70,79];
+1,7,1,7,1,7,1,7,3,7,80,8,7,1,8,1,8,1,9,4,9,85,8,9,11,9,12,9,86,1,9,0,0,10,
+0,2,4,6,8,10,12,14,16,18,0,1,1,0,10,13,87,0,21,1,0,0,0,2,36,1,0,0,0,4,38,
+1,0,0,0,6,55,1,0,0,0,8,58,1,0,0,0,10,62,1,0,0,0,12,65,1,0,0,0,14,79,1,0,
+0,0,16,81,1,0,0,0,18,84,1,0,0,0,20,22,3,2,1,0,21,20,1,0,0,0,22,23,1,0,0,
+0,23,21,1,0,0,0,23,24,1,0,0,0,24,25,1,0,0,0,25,26,5,0,0,1,26,1,1,0,0,0,27,
+28,3,4,2,0,28,29,5,1,0,0,29,37,1,0,0,0,30,31,3,8,4,0,31,32,5,1,0,0,32,37,
+1,0,0,0,33,34,3,10,5,0,34,35,5,1,0,0,35,37,1,0,0,0,36,27,1,0,0,0,36,30,1,
+0,0,0,36,33,1,0,0,0,37,3,1,0,0,0,38,39,5,2,0,0,39,40,3,16,8,0,40,41,5,3,
+0,0,41,42,3,12,6,0,42,43,5,4,0,0,43,46,3,12,6,0,44,45,5,5,0,0,45,47,3,12,
+6,0,46,44,1,0,0,0,46,47,1,0,0,0,47,48,1,0,0,0,48,49,5,6,0,0,49,50,3,6,3,
+0,50,51,5,7,0,0,51,5,1,0,0,0,52,54,3,2,1,0,53,52,1,0,0,0,54,57,1,0,0,0,55,
+53,1,0,0,0,55,56,1,0,0,0,56,7,1,0,0,0,57,55,1,0,0,0,58,59,3,16,8,0,59,60,
+5,8,0,0,60,61,3,12,6,0,61,9,1,0,0,0,62,63,5,9,0,0,63,64,3,12,6,0,64,11,1,
+0,0,0,65,70,3,14,7,0,66,67,7,0,0,0,67,69,3,14,7,0,68,66,1,0,0,0,69,72,1,
+0,0,0,70,68,1,0,0,0,70,71,1,0,0,0,71,13,1,0,0,0,72,70,1,0,0,0,73,80,3,18,
+9,0,74,80,3,16,8,0,75,76,5,14,0,0,76,77,3,12,6,0,77,78,5,15,0,0,78,80,1,
+0,0,0,79,73,1,0,0,0,79,74,1,0,0,0,79,75,1,0,0,0,80,15,1,0,0,0,81,82,5,16,
+0,0,82,17,1,0,0,0,83,85,5,18,0,0,84,83,1,0,0,0,85,86,1,0,0,0,86,84,1,0,0,
+0,86,87,1,0,0,0,87,19,1,0,0,0,7,23,36,46,55,70,79,86];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -42,7 +43,7 @@ export default class AnalizadorParser extends antlr4.Parser {
                             "')'" ];
     static symbolicNames = [ null, null, null, null, null, null, null, null, 
                              null, null, null, null, null, null, null, null, 
-                             "IDENTIFICADOR", "DIGITO", "WS" ];
+                             "IDENTIFICADOR", "WS", "DIGITO" ];
     static ruleNames = [ "programa", "instruccion", "variar", "bloque", 
                          "asignacion", "salida", "expresion", "termino", 
                          "variable", "numero" ];
@@ -322,7 +323,7 @@ export default class AnalizadorParser extends antlr4.Parser {
 	        this.state = 79;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
-	        case 17:
+	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 73;
 	            this.numero();
@@ -386,10 +387,19 @@ export default class AnalizadorParser extends antlr4.Parser {
 	numero() {
 	    let localctx = new NumeroContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 18, AnalizadorParser.RULE_numero);
+	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 83;
-	        this.match(AnalizadorParser.DIGITO);
+	        this.state = 84; 
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        do {
+	            this.state = 83;
+	            this.match(AnalizadorParser.DIGITO);
+	            this.state = 86; 
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        } while(_la===18);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -424,8 +434,8 @@ AnalizadorParser.T__12 = 13;
 AnalizadorParser.T__13 = 14;
 AnalizadorParser.T__14 = 15;
 AnalizadorParser.IDENTIFICADOR = 16;
-AnalizadorParser.DIGITO = 17;
-AnalizadorParser.WS = 18;
+AnalizadorParser.WS = 17;
+AnalizadorParser.DIGITO = 18;
 
 AnalizadorParser.RULE_programa = 0;
 AnalizadorParser.RULE_instruccion = 1;
@@ -827,9 +837,17 @@ class NumeroContext extends antlr4.ParserRuleContext {
         this.ruleIndex = AnalizadorParser.RULE_numero;
     }
 
-	DIGITO() {
-	    return this.getToken(AnalizadorParser.DIGITO, 0);
+	DIGITO = function(i) {
+		if(i===undefined) {
+			i = null;
+		}
+	    if(i===null) {
+	        return this.getTokens(AnalizadorParser.DIGITO);
+	    } else {
+	        return this.getToken(AnalizadorParser.DIGITO, i);
+	    }
 	};
+
 
 	enterRule(listener) {
 	    if(listener instanceof AnalizadorListener ) {

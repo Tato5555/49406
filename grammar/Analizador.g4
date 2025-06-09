@@ -1,4 +1,3 @@
-
 grammar Analizador;
 
 programa       : instruccion+ EOF ;
@@ -17,8 +16,9 @@ variable       : IDENTIFICADOR ;
 
 IDENTIFICADOR  : LETRA (LETRA | DIGITO | '_')* ;
 fragment LETRA : [a-zA-Z] ;
-fragment DIGITO: [0-9] ;
 
-numero         : DIGITO+ ;
+DIGITO         : [0-9]+ ;
+
+numero         : DIGITO ;
 
 WS             : [ \t\r\n]+ -> skip ;

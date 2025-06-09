@@ -1,99 +1,87 @@
-// Generated from grammar//Analizador.g4 by ANTLR 4.13.1
-// jshint ignore: start
 import antlr4 from 'antlr4';
 
-// This class defines a complete listener for a parse tree produced by AnalizadorParser.
 export default class AnalizadorListener extends antlr4.tree.ParseTreeListener {
+    constructor() {
+        super();
+        this.tablaSimbolos = {}; // Almacena variables y valores
+    }
 
-	// Enter a parse tree produced by AnalizadorParser#programa.
-	enterPrograma(ctx) {
-	}
+    // 📌 Inicio y fin del programa
+    enterPrograma(ctx) {
+        console.log("Inicio del programa.");
+    }
 
-	// Exit a parse tree produced by AnalizadorParser#programa.
-	exitPrograma(ctx) {
-	}
+    exitPrograma(ctx) {
+        console.log("Fin del programa.");
+        console.log("Tabla de símbolos:", this.tablaSimbolos);
+    }
 
+    // 🔹 Manejo de instrucciones generales
+    enterInstruccion(ctx) {
+        console.log(`Ejecutando instrucción: ${ctx.getText()}`);
+    }
 
-	// Enter a parse tree produced by AnalizadorParser#instruccion.
-	enterInstruccion(ctx) {
-	}
+    // 🔹 Manejo de bucle 'variar'
+    enterVariar(ctx) {
+        const variable = ctx.variable().getText();
+        const inicio = parseInt(ctx.expresion(0).getText());
+        const fin = parseInt(ctx.expresion(1).getText());
 
-	// Exit a parse tree produced by AnalizadorParser#instruccion.
-	exitInstruccion(ctx) {
-	}
+        console.log(`Ejecutando bucle 'variar' sobre '${variable}' desde ${inicio} hasta ${fin}`);
+        for (let i = inicio; i <= fin; i++) {
+            this.tablaSimbolos[variable] = i;
+            console.log(`Salida: ${i}`);
+        }
+    }
 
+    // 🔹 Manejo de asignaciones
+    enterAsignacion(ctx) {
+        const variable = ctx.variable().getText();
+        const valor = ctx.expresion().getText();
+        this.tablaSimbolos[variable] = valor;
+        console.log(`Asignación: ${variable} <- ${valor}`);
+    }
 
-	// Enter a parse tree produced by AnalizadorParser#variar.
-	enterVariar(ctx) {
-	}
+    // 🔹 Manejo de salida (escribir)
+    enterSalida(ctx) {
+        const valor = ctx.expresion().getText();
+        console.log(`Salida: ${this.tablaSimbolos[valor] || valor}`);
+    }
 
-	// Exit a parse tree produced by AnalizadorParser#variar.
-	exitVariar(ctx) {
-	}
+    // 🔹 Manejo de variables
+    enterVariable(ctx) {
+        const variable = ctx.getText();
+        console.log(`Variable detectada: ${variable}`);
+    }
 
+    exitVariable(ctx) {
+        console.log(`Fin de procesamiento de variable: ${ctx.getText()}`);
+    }
 
-	// Enter a parse tree produced by AnalizadorParser#bloque.
-	enterBloque(ctx) {
-	}
+    // 🔹 Manejo de expresiones
+    enterExpresion(ctx) {
+        console.log(`Procesando expresión: ${ctx.getText()}`);
+    }
 
-	// Exit a parse tree produced by AnalizadorParser#bloque.
-	exitBloque(ctx) {
-	}
+    exitExpresion(ctx) {
+        console.log(`Fin de procesamiento de expresión: ${ctx.getText()}`);
+    }
 
+    // 🔹 Manejo de números
+    enterNumero(ctx) {
+        console.log(`Número detectado: ${ctx.getText()}`);
+    }
 
-	// Enter a parse tree produced by AnalizadorParser#asignacion.
-	enterAsignacion(ctx) {
-	}
+    exitNumero(ctx) {
+        console.log(`Fin de procesamiento de número: ${ctx.getText()}`);
+    }
 
-	// Exit a parse tree produced by AnalizadorParser#asignacion.
-	exitAsignacion(ctx) {
-	}
+    // 🔹 Manejo de términos
+    enterTermino(ctx) {
+        console.log(`Procesando término: ${ctx.getText()}`);
+    }
 
-
-	// Enter a parse tree produced by AnalizadorParser#salida.
-	enterSalida(ctx) {
-	}
-
-	// Exit a parse tree produced by AnalizadorParser#salida.
-	exitSalida(ctx) {
-	}
-
-
-	// Enter a parse tree produced by AnalizadorParser#expresion.
-	enterExpresion(ctx) {
-	}
-
-	// Exit a parse tree produced by AnalizadorParser#expresion.
-	exitExpresion(ctx) {
-	}
-
-
-	// Enter a parse tree produced by AnalizadorParser#termino.
-	enterTermino(ctx) {
-	}
-
-	// Exit a parse tree produced by AnalizadorParser#termino.
-	exitTermino(ctx) {
-	}
-
-
-	// Enter a parse tree produced by AnalizadorParser#variable.
-	enterVariable(ctx) {
-	}
-
-	// Exit a parse tree produced by AnalizadorParser#variable.
-	exitVariable(ctx) {
-	}
-
-
-	// Enter a parse tree produced by AnalizadorParser#numero.
-	enterNumero(ctx) {
-	}
-
-	// Exit a parse tree produced by AnalizadorParser#numero.
-	exitNumero(ctx) {
-	}
-
-
-
+    exitTermino(ctx) {
+        console.log(`Fin de procesamiento de término: ${ctx.getText()}`);
+    }
 }

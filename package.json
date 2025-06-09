@@ -1,18 +1,17 @@
 {
   "name": "analizador-39568_4",
   "version": "1.0.0",
-  "description": "## Requisitos",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "Analizador léxico y sintáctico con ANTLR4 y JavaScript",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "antlr4 -Dlanguage=JavaScript -o generated grammar/Analizador.g4",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antlr4": "^4.13.2"
+    "antlr4": "^4.13.1"
   }
 }
